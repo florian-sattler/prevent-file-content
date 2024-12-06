@@ -1,0 +1,5 @@
+- id: prevent-file-content
+  name: Prevent file content
+  description: Check that given patterns are not present
+  entry: prevent-file-content
+  language: python
