@@ -50,3 +50,34 @@ Prevent importing `os` in all python files:
     - "from os\\.[^\\s]+ import"
   types: [python]
 ```
+
+Multiple configurations can be specified by repeating the hook id with different parameters:
+
+```yaml
+- repo: https://github.com/floriandejonckheere/preventfilecontent
+  rev: ""
+  hooks:
+    # Prevent FIXME, HACK and TODO in all yaml and html files
+    - id: prevent-file-content
+      args:
+        - -p
+        - "TODO"
+        - -p
+        - "FIXME"
+        - -p
+        - "HACK"
+      types_or:
+        - yaml
+        - html
+
+    # Prevent some linting exceptions in python files
+    - id: prevent-file-content
+      args:
+        - --pattern
+        - "# noqa"
+        - --pattern
+        - "# pragma: no cover"
+        - --pattern
+        - "# type: ignore"
+      types: [python]
+```
