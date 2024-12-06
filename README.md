@@ -46,5 +46,7 @@ Prevent importing `os` in all python files:
     - "import os"
     - --pattern
     - "from os import"
-  types: python
+    - --pattern
+    - "from os\\.[^\\s]+ import"
+  types: [python]
 ```
