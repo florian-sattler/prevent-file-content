@@ -53,6 +53,9 @@ def validate_patterns(patterns: typing.Any) -> list[re.Pattern]:
 
 
 def process_file(path: pathlib.Path, patterns: list[re.Pattern]) -> Status:
+    if path.name == ".pre-commit-config.yaml":
+        return Status.SUCCESS
+
     try:
         text = path.read_text()
     except (OSError, UnicodeDecodeError):
