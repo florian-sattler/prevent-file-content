@@ -82,6 +82,11 @@ def main() -> None:
         action="append",
         help="Pattern to prevent in files, can be specified multiple times",
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Print more info",
+    )
     args = parser.parse_args()
 
     try:
@@ -101,7 +106,8 @@ def main() -> None:
         status = process_file(path, patterns)
         match status:
             case Status.SUCCESS:
-                print(f"{path} ok")
+                if args.verbose:
+                    print(f"{path} ok")
             case Status.FILE_READ_ERROR:
                 print(f"{path} could not be read")
                 error = True
