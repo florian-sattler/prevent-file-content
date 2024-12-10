@@ -7,7 +7,7 @@ This is a [pre-commit hook](https://pre-commit.com/) to check that given pattern
 Add the following to your `.pre-commit-config.yaml`:
 
 ```yaml
-- repo: https://github.com/floriandejonckheere/preventfilecontent
+- repo: https://github.com/florian-sattler/prevent-file-content
   rev: ""
   hooks:
     - id: prevent-file-content
