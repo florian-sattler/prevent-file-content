@@ -54,7 +54,7 @@ Prevent importing `os` in all python files:
 Multiple configurations can be specified by repeating the hook id with different parameters:
 
 ```yaml
-- repo: https://github.com/floriandejonckheere/preventfilecontent
+- repo: https://github.com/florian-sattler/prevent-file-content
   rev: ""
   hooks:
     # Prevent FIXME, HACK and TODO in all yaml and html files
